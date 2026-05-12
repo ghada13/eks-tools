@@ -31,7 +31,7 @@ data "aws_eks_cluster" "eks_cluster" {
 
 data "aws_eks_cluster_auth" "eks_cluster_auth" {
   name = var.cluster_name
-  depends_on = [ module.kubernetes ]
+ 
 }
 
 # kubernetes Provider configuration
