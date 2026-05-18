@@ -43,8 +43,8 @@ jobs:
       - name: Terraform workspace select
         working-directory: ./
         run: terraform workspace select ${{ github.event.inputs.workspace }} || terraform workspace new ${{ github.event.inputs.workspace }}
-      #- name: Terraform unlock 
-      #  run: terraform force-unlock -force 117a6494-e29a-86df-4d47-826b73f53e47
+      - name: Terraform unlock 
+        run: terraform force-unlock -force 117a6494-e29a-86df-4d47-826b73f53e47
       - name: Terraform plan
         run: terraform plan
       
