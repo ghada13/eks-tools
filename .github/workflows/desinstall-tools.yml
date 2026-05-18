@@ -44,7 +44,8 @@ jobs:
         working-directory: ./
         run: terraform workspace select ${{ github.event.inputs.workspace }} || terraform workspace new ${{ github.event.inputs.workspace }}
       - name: Terraform plan destroy
-        run: terraform plan -destroy
-      
-      - name: Terraform destroy
-        run: terraform destroy -auto-approve
+        run: terraform plan -destroy -var cluster_name=${{ github.event.inputs.cluster_name }}
+        working-directory: ./      
+      - name: Terraform Apply
+        run: terraform destroy -var cluster_name=${{ github.event.inputs.cluster_name }} -auto-approve
+        working-directory: ./
