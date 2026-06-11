@@ -1,5 +1,5 @@
 resource "kubectl_manifest" "gateway_class" {
-  yaml_body  = file("${path.root}/kubernetes/manifests/gatewayclass.yaml")
+  yaml_body  = file("${path.root}/kubernetes/manifests/gateway-class.yaml")
   depends_on = [kubectl_manifest.envoy_proxy, kubectl_manifest.certificate_kubeflow_pipelines]
 }
 
