@@ -20,7 +20,7 @@ terraform {
   required_version = ">= 1.14.0"
 }
 
-# azurerm Provider configuration
+# aws Provider configuration
 provider "aws" {
   region = "us-east-1"
 }
