@@ -1,0 +1,18 @@
+images:
+  frontend: ghcr.io/kubeflow/kfp-frontend:2.16.0
+mysql:
+  enabled: true
+  persistence:
+    enabled: true
+    storageClass: gp3
+
+minio:
+  enabled: true
+  persistence:
+    enabled: true
+    storageClass: gp3
+
+platform:
+  cloud: minio
+  managedStorage:
+    enabled: false

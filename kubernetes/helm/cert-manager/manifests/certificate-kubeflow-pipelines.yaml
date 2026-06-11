@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: kubeflow-pipelines-cert
+  namespace: envoy-gateway-system
+spec:
+  secretName: kubeflow-pipelines-tls
+  dnsNames:
+  - ghada.eks.karimarous.com
+  issuerRef:
+    kind: ClusterIssuer
+    name: letsencrypt-prod
